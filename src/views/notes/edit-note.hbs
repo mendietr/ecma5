@@ -1,0 +1,217 @@
+{{#each errors}}
+  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+    {{text}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+{{/each}}
+
+<div class="col-md-4 mx-auto">
+  <div class="card">
+    <div class="card-header text-center">
+      <h3>Edit Note</h3>
+    </div>
+
+
+
+    <div class="card-body">
+      <form action="/notes/edit-note/{{note._id}}?_method=PUT" method="POST">
+        <input type="hidden" name="_method" value="PUT" />
+        <div class="mb-3">
+          <label for="title">Title:</label>
+          <input
+            type="text"
+            name="title"
+            class="form-control"
+            value="{{note.title}}"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="description">Description:</label>
+          <textarea
+            name="description"
+            class="form-control"
+          >{{note.description}}</textarea>
+        </div>
+
+
+    <div class="mb-3">
+      <label for="usuario">Usuario:</label>
+      <input 
+      type="text" 
+      name="usuario" 
+      class="form-control" 
+      value="{{note.usuario}}" 
+      />
+    </div> 
+    
+        <div class="card-body">
+  <form action="/notes/edit-note/{{note._id}}?_method=PUT" method="POST">
+    <input type="hidden" name="_method" value="PUT" />
+    
+    {{!-- <div class="mb-3">
+      <label for="fecha">Fecha:</label>
+      <input type="date" name="fecha" class="form-control" value="{{note.fecha}}" />
+    </div>
+    <div class="mb-3">
+      <label for="numero_interno">Numero interno:</label>
+      <input type="text" name="numero_interno" class="form-control" value="{{note.numero_interno}}" />
+    </div>
+    <div class="mb-3">
+      <label for="rev_interna">Rev interna:</label>
+      <input type="text" name="rev_interna" class="form-control" value="{{note.rev_interna}}" />
+    </div>
+    <div class="mb-3">
+      <label for="fecha_revision">Fecha de revision:</label>
+      <input type="date" name="fecha_revision" class="form-control" value="{{note.fecha_revision}}" />
+    </div>
+    <div class="mb-3">
+      <label for="nombre_pieza">Nombre de la pieza:</label>
+      <input type="text" name="nombre_pieza" class="form-control" value="{{note.nombre_pieza}}" />
+    </div>
+    <div class="mb-3">
+      <label for="cliente">Cliente:</label>
+      <input type="text" name="cliente" class="form-control" value="{{note.cliente}}" />
+    </div>
+    <div class="mb-3">
+      <label for="numero_interno_cliente">Numero interno del cliente:</label>
+      <input type="text" name="numero_interno_cliente" class="form-control" value="{{note.numero_interno_cliente}}" />
+    </div>
+    <div class="mb-3">
+      <label for="aplicacion">Aplicación:</label>
+      <input type="text" name="aplicacion" class="form-control" value="{{note.aplicacion}}" />
+    </div>
+    <div class="mb-3">
+      <label for="nivel_ingenieria">Nivel de ingenieria:</label>
+      <input type="text" name="nivel_ingenieria" class="form-control" value="{{note.nivel_ingenieria}}" />
+    </div>
+    <div class="mb-3">
+      <label for="fecha_modificacion_ing">Fecha de modificacion de ing.:</label>
+      <input type="date" name="fecha_modificacion_ing" class="form-control" value="{{note.fecha_modificacion_ing}}" />
+    </div>
+    <div class="mb-3">
+      <label for="modificaciones_adicionales">Modificaciones adicionales:</label>
+      <textarea name="modificaciones_adicionales" class="form-control">{{note.modificaciones_adicionales}}</textarea>
+    </div>
+     <div>
+    <label for="historial-modificacion">Historial de Modificación:</label>
+    <textarea name="historial-modificacion" id="historial-modificacion">{{nota.historial-modificacion}}</textarea>
+  </div>
+
+  <!-- Status -->
+  <div>
+    <label for="status">Status:</label>
+    <input type="text" name="status" id="status" value="{{nota.status}}">
+  </div>
+
+  <!-- Organización -->
+  <div>
+    <label for="organizacion">Organización:</label>
+    <input type="text" name="organizacion" id="organizacion" value="{{nota.organizacion}}">
+  </div>
+
+  <!-- Número -->
+  <div>
+    <label for="numero">Número:</label>
+    <input type="text" name="numero" id="numero" value="{{nota.numero}}">
+  </div>
+
+  <!-- Descripción -->
+  <div>
+    <label for="descripcion">Descripción:</label>
+    <textarea name="descripcion" id="descripcion">{{nota.descripcion}}</textarea>
+  </div>
+
+  <!-- Máquina -->
+  <div>
+    <label for="maquina">Máquina:</label>
+    <input type="text" name="maquina" id="maquina" value="{{nota.maquina}}">
+  </div>
+
+  <!-- Símbolo -->
+  <div>
+    <label for="simbolo">Símbolo:</label>
+    <input type="text" name="simbolo" id="simbolo" value="{{nota.simbolo}}">
+  </div>
+
+  <!-- Característica Número -->
+  <div>
+    <label for="caracteristica-numero">Característica Número:</label>
+    <input type="text" name="caracteristica-numero" id="caracteristica-numero" value="{{nota.caracteristica-numero}}">
+  </div>
+
+  <!-- Característica Producto -->
+  <div>
+    <label for="caracteristica-producto">Característica Producto:</label>
+    <input type="text" name="caracteristica-producto" id="caracteristica-producto" value="{{nota.caracteristica-producto}}">
+  </div>
+
+  <!-- S -->
+  <div>
+    <label for="s">S:</label>
+    <input type="text" name="s" id="s" value="{{nota.s}}">
+  </div>
+
+  <!-- Especificación de Producto -->
+  <div>
+    <label for="especificacion-producto">Especificación de Producto:</label>
+    <input type="text" name="especificacion-producto" id="especificacion-producto" value="{{nota.especificacion-producto}}">
+  </div>
+
+  <!-- Tolerancia + -->
+  <div>
+    <label for="tolerancia-mas">Tolerancia +:</label>
+    <input type="text" name="tolerancia-mas" id="tolerancia-mas" value="{{nota.tolerancia-mas}}">
+  </div>
+   <!-- tolerancia - field -->
+  <div>
+    <label for="tolerance-negative">Tolerancia -:</label>
+    <input type="text" name="tolerance-negative" value="{{note.toleranceNegative}}">
+  </div>
+
+  <!-- unidad de medida field -->
+  <div>
+    <label for="unit-measure">Unidad de medida:</label>
+    <input type="text" name="unit-measure" value="{{note.unitMeasure}}">
+  </div>
+
+  <!-- tecnica de medicion field -->
+  <div>
+    <label for="measurement-technique">Técnica de medición:</label>
+    <input type="text" name="measurement-technique" value="{{note.measurementTechnique}}">
+  </div>
+
+  <!-- tamaño de muestra field -->
+  <div>
+    <label for="sample-size">Tamaño de muestra:</label>
+    <input type="text" name="sample-size" value="{{note.sampleSize}}">
+  </div>
+
+  <!-- frecuencia de inspeccion field -->
+  <div>
+    <label for="inspection-frequency">Frecuencia de inspección:</label>
+    <input type="text" name="inspection-frequency" value="{{note.inspectionFrequency}}">
+  </div>
+
+  <!-- Método de control field -->
+  <div>
+    <label for="control-method">Método de control:</label>
+    <input type="text" name="control-method" value="{{note.controlMethod}}">
+  </div>
+
+  <!-- Plan de reacción field -->
+  <div>
+    <label for="reaction-plan">Plan de reacción:</label>
+    <input type="text" name="reaction-plan" value="{{note.reactionPlan}}">
+  </div> --}}
+
+  {{!-- <button type="submit">Guardar cambios</button> --}}
+</form>
+        <button class="btn btn-primary w-100" type="submit">
+          Save
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

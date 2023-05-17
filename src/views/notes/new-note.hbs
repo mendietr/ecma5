@@ -1,0 +1,171 @@
+<div class="col-md-4 mx-auto">
+  <div class="card">
+    <div class="card-header bg-dark text-center">
+      <h3 class="text-white">Datos de Control</h3>
+    </div>
+    <div class="card-body text-right">
+      <form action="/notes/new-note" method="POST">
+        <div class="mb-3">
+          <label for="title">Title:</label>
+          <input
+            type="text"
+            name="title"
+            class="form-control"
+            placeholder="Title"
+            autofocus
+          />
+
+<html>
+  <head>
+    <title>Formulario</title>
+  </head>
+  <body>
+    <form>
+       </div>
+        <div class="mb-3">
+          <label for="description">Description:</label>
+          <textarea
+            name="description"
+            class="form-control"
+            placeholder="Description"
+          ></textarea>
+        </div>
+      <div class="mb-3">
+        <label for="usuario">Usuario:</label>
+        <input 
+        type="text" 
+        name="usuario" 
+        class="form-control" 
+        placeholder="Ingrese su nombre de usuario" required />
+      </div>
+      {{!-- <div class="mb-3">
+        <label for="fecha">Fecha:</label>
+        <input type="date" name="fecha" class="form-control" required />
+      </div>
+      <div class="mb-3">
+        <label for="num_interno">Numero interno:</label>
+        <input type="text" name="num_interno" class="form-control" placeholder="Ingrese el número interno" />
+      </div>
+      <div class="mb-3">
+        <label for="rev_interna">Rev interna:</label>
+        <input type="text" name="rev_interna" class="form-control" placeholder="Ingrese la revisión interna" />
+      </div>
+      <div class="mb-3">
+        <label for="fecha_revision">Fecha de revision:</label>
+        <input type="date" name="fecha_revision" class="form-control" />
+      </div>
+      <div class="mb-3">
+        <label for="nombre_pieza">Nombre de la pieza:</label>
+        <input type="text" name="nombre_pieza" class="form-control" placeholder="Ingrese el nombre de la pieza" />
+      </div>
+      <div class="mb-3">
+        <label for="cliente">Cliente:</label>
+        <input type="text" name="cliente" class="form-control" placeholder="Ingrese el nombre del cliente" required />
+      </div>
+      <div class="mb-3">
+        <label for="num_interno_cliente">Numero interno:</label>
+        <input type="text" name="num_interno_cliente" class="form-control" placeholder="Ingrese el número interno del cliente" />
+      </div>
+      <div class="mb-3">
+        <label for="num_pieza_cliente">Numero de pieza del Cliente:</label>
+        <input type="text" name="num_pieza_cliente" class="form-control" placeholder="Ingrese el número de pieza del cliente" />
+      </div>
+      <div class="mb-3">
+        <label for="aplicacion">Aplicación:</label>
+        <input type="text" name="aplicacion" class="form-control" placeholder="Ingrese la aplicación" />
+      </div>
+      <div class="mb-3">
+        <label for="nivel_ingenieria">Nivel de ingeniería:</label>
+        <input type="text" name="nivel_ingenieria" class="form-control" placeholder="Ingrese el nivel de ingeniería" />
+      </div>
+      <div class="mb-3">
+        <label for="fecha_modificacion_ing">Fecha de modificación de ing.:</label>
+        <input type="date" name="fecha_modificacion_ing" class="form-control" />
+      </div>
+      <div class="mb-3">
+        <label for="modificaciones_adicionales">Modificaciones adicionales:</label>
+        <textarea name="modificaciones_adicionales" class="form-control" placeholder="Ingrese las modificaciones adicionales"></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="historial_modificacion">Historial de modificación:</label>
+        <textarea name="historial_modificacion" class="form-control" placeholder="Ingrese el historial de modificación"></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="status">Status:</label>
+        <input type="text" name="status" class="form-control" placeholder="Ingrese el estado actual" />
+      </div>
+      <div class="mb-3">
+        <label for="organizacion">Organización:</label>
+        <input type="text" name="organizacion" class="form-control" placeholder="Ingrese la organización" />
+      </div>
+      <div class="mb-3">
+        <label for="numero">Numero:</label>
+        <input type="text" name="numero" class="form-control" placeholder="Ingrese el número" />
+      </div>
+      <div class="mb-3">
+        <label for="descripcion">Descripción:</label>
+        <textarea name="descripcion" class="form-control" placeholder="Ingrese la descripción"></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="maquina">Maquina:</label>
+        <input type="text" name="maquina" class="form-control" placeholder="Ingrese la máquina" />
+      </div>
+      <div class="mb-3">
+        <label for="simbolo">Símbolo:</label>
+        <input type="text" name="simbolo" class="form-control" placeholder="Ingrese el símbolo" />
+      </div>
+      <div class="mb-3">
+        <label for="caracteristica_numero">Característica Numero:</label>
+        <input type="text" name="caracteristica_numero" class="form-control" placeholder="Ingrese la característica número" />
+      </div>
+      <div class="mb-3">
+        <label for="caracteristica_producto">Característica Producto:</label>
+        <input type="text" name="caracteristica_producto" class="form-control" placeholder="Ingrese la característica del producto" />
+      </div>
+      <div class="mb-3">
+        <label for="especificacion_producto">Especificación de producto:</label>
+        <textarea name="especificacion_producto" class="form-control" placeholder="Ingrese la especificación del producto"></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="tolerancia_positiva">Tolerancia +:</label>
+        <input type="text" name="tolerancia_positiva" class="form-control" placeholder="Ingrese la tolerancia positiva" />
+      </div>
+      <div class="mb-3">
+        <label for="tolerancia_negativa">Tolerancia -:</label>
+        <input type="text" name="tolerancia_negativa" class="form-control" placeholder="Ingrese la tolerancia negativa" />
+      </div>
+      <div class="mb-3">
+        <label for="unidad_medida">Unidad de medida:</label>
+        <input type="text" name="unidad_medida" class="form-control" placeholder="Ingrese la unidad de medida" />
+      </div>
+<div class="mb-3">
+        <label for="tecnica_medicion">Técnica de medición:</label>
+        <input type="text" name="tecnica_medicion" class="form-control" placeholder="Ingrese la técnica de medición" />
+      </div>
+      <div class="mb-3">
+        <label for="tamaño_muestra">Tamaño de muestra:</label>
+        <input type="text" name="tamaño_muestra" class="form-control" placeholder="Ingrese el tamaño de muestra" />
+      </div>
+      <div class="mb-3">
+        <label for="frecuencia_inspeccion">Frecuencia de inspección:</label>
+        <input type="text" name="frecuencia_inspeccion" class="form-control" placeholder="Ingrese la frecuencia de inspección" />
+      </div>
+      <div class="mb-3">
+        <label for="metodo_control">Método de control:</label>
+        <input type="text" name="metodo_control" class="form-control" placeholder="Ingrese el método de control" />
+      </div>
+      <div class="mb-3">
+        <label for="plan_reaccion">Plan de reacción:</label>
+        <textarea name="plan_reaccion" class="form-control" placeholder="Ingrese el plan de reacción"></textarea>
+      </div> --}}
+
+
+       
+
+        <button class="btn btn-primary w-100" type="submit">
+          Save
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
